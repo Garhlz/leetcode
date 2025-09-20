@@ -1,3 +1,7 @@
+package main
+
+import "slices"
+
 func largestInteger(nums []int, k int) int {
 	n := len(nums)
 	if k == n {
