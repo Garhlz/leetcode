@@ -1,1 +1,1 @@
-这是我刷leetcode题目的仓库,主要使用了java,go,cpp进行刷题,也准备练习rust
+这是我刷leetcode题目的仓库,主要使用了java,go,cpp进行刷题,也准备使用leetcode题目练习rust.如果不时常练习维持手感,就会产生遗忘
