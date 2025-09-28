@@ -1,3 +1,5 @@
+package golang
+
 func uniquePaths(m, n int) int {
 	memo := make([][]int, m)
 	for i := range memo {

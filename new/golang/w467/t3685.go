@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"slices"
 )
 
@@ -61,8 +60,9 @@ func subsequenceSumAfterCapping(nums []int, k int) []bool {
 	}
 	return ans
 }
-func main() {
-	nums := []int{2, 6, 3, 6, 5, 6, 2, 8}
-	k := 29
-	fmt.Println(subsequenceSumAfterCapping(nums, k))
-}
+
+// func main() {
+// 	nums := []int{2, 6, 3, 6, 5, 6, 2, 8}
+// 	k := 29
+// 	fmt.Println(subsequenceSumAfterCapping(nums, k))
+// }
