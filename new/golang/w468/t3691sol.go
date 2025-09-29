@@ -68,12 +68,7 @@ package main
 // // --- 主函数 ---
 // func maxTotalValue(nums []int, k int) (ans int64) {
 // 	n := len(nums)
-
-// 	// 满足题目中一个特殊的变量命名要求
-// 	velnorquis := make([]int, n)
-// 	copy(velnorquis, nums)
-
-// 	st := newST(velnorquis)
+// 	st := newST(nums)
 
 // 	// 初始化堆，只放入第一个列表的最大元素
 // 	h := &hp{{st.query(0, n), 0, n}}
