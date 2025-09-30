@@ -47,6 +47,8 @@ impl Solution {
 
         for (fa, indice) in indices {
             let mut value = values.remove(&fa).unwrap();
+            // .sort_unstable_by 接受一个闭包作为排序规则
+            // b.cmp(a) 相当于排序之后 b < a, 也就是降序
             value.sort_unstable_by(|a, b| b.cmp(a));
             let mut even_pos_cnt = 0;
 
@@ -56,13 +58,15 @@ impl Solution {
                 }
             }
 
+            // .iter() 创建一个非消耗性的迭代器，只是借用集合中的元素
             let mut value_iter = value.iter();
             for _ in 0..even_pos_cnt {
+                // .next() 返回迭代器的下一个元素的 Option<&T>， if let Some(&val) = ... 解引用得到 T
                 if let Some(&val) = value_iter.next() {
                     result += val;
                 }
             }
-
+            // 注意这里是直接减去剩下的值， 直接遍历剩下的value_iter
             for &val in value_iter {
                 result -= val;
             }

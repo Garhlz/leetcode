@@ -4,17 +4,19 @@ impl Solution {
         let n = s.len();
         let k = k as usize;
 
+        // .chars() 返回一个迭代器，.collect() 收集到一个 Vec<char> 中
         let moves: Vec<char> = s.chars().collect();
 
         let (mut total_dx, mut total_dy) = (0, 0);
 
+        // 迭代器返回的是&m,需要用模式匹配解引用
         for &m in &moves {
             match m {
                 'U' => total_dy += 1,
                 'D' => total_dy -= 1,
                 'L' => total_dx -= 1,
                 'R' => total_dx += 1,
-                _ => {}
+                _ => {} // 注意char还有很多其他选择，这里用_忽略
             }
         }
 

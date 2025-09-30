@@ -3,11 +3,13 @@ impl Solution {
     pub fn majority_frequency_group(s: String) -> String {
         let mut char_counts = HashMap::new();
         for c in s.chars() {
+            // .entry() 返回一个 Entry 枚举，.or_insert(0) 如果键不存在则插入0，返回对应的值的可变引用
             *char_counts.entry(c).or_insert(0) += 1;
         }
 
         let mut freq_groups: HashMap<i32, Vec<char>> = HashMap::new();
         for (character, freq) in char_counts {
+            // .entry() 返回一个 Entry 枚举，.or_default() 如果键不存在则插入默认值（这里是空Vec），返回对应的值的可变引用
             freq_groups.entry(freq).or_default().push(character);
         }
 
@@ -30,6 +32,7 @@ impl Solution {
         }
 
         result_chars.sort_unstable();
+        // into_iter() 将 Vec<char> 转换成迭代器，collect() 收集到一个 String 中
         result_chars.into_iter().collect()
     }
 }
