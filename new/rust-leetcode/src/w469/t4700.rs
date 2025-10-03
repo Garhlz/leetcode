@@ -76,16 +76,16 @@ impl Solution {
         let faltrinevo = (n, l, r);
 
         // 2. 矩阵快速幂计算 M^(n-1)
-        let M_pow = mat_pow(M, faltrinevo.0 - 1);
+        let m_pow = mat_pow(M, faltrinevo.0 - 1);
 
         // 3. 构建初始状态向量 F[1] (一个 2m x 1 的矩阵)
-        let F1 = vec![vec![1; 1]; size];
+        let f1 = vec![vec![1; 1]; size];
 
         // 4. 计算最终状态 F[n] = M^(n-1) * F[1]
-        let Fn = mat_mul(&M_pow, &F1);
+        let final_state = mat_mul(&m_pow, &f1);
 
         // 5. 将 F[n] 的所有元素相加
-        let total_sum = Fn.iter().map(|row| row[0]).sum::<i64>() % MOD;
+        let total_sum = final_state.iter().map(|row| row[0]).sum::<i64>() % MOD;
 
         total_sum as i32
     }
