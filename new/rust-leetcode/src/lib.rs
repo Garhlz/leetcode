@@ -9,3 +9,7 @@ pub mod w469 {
 pub mod w460 {
     automod::dir!("src/w460/");
 }
+
+pub mod w459 {
+    automod::dir!("src/w459/");
+}
